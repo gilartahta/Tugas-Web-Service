@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>	
+<?php
+  $json_string = file_get_contents
+  ("http://api.wunderground.com/api/59c7fab0f84ee955/conditions/q/ID/Cicaheum.json");
+  $parsed_json = json_decode($json_string);
+  $lokasi = $parsed_json->{'current_observation'}->{'display_location'}->{'full'};
+ $suhu = $parsed_json->{'current_observation'}->{'feelslike_string'};
+ $cuaca = $parsed_json->{'current_observation'}->{'icon_url'};
+ 
+  $json_string = file_get_contents
+  ("http://api.wunderground.com/api/59c7fab0f84ee955/conditions/q/ID/Cileungsi.json");
+  $parsed_json = json_decode($json_string);
+  $lokasi1 = $parsed_json->{'current_observation'}->{'display_location'}->{'full'};
+ $suhu1 = $parsed_json->{'current_observation'}->{'feelslike_string'};
+ $cuaca1 = $parsed_json->{'current_observation'}->{'icon_url'};
+ 
+  $json_string = file_get_contents
+  ("http://api.wunderground.com/api/59c7fab0f84ee955/conditions/q/ID/Cileungsi.json");
+  $parsed_json = json_decode($json_string);
+  $lokasi2 = $parsed_json->{'current_observation'}->{'display_location'}->{'full'};
+ $suhu2 = $parsed_json->{'current_observation'}->{'feelslike_string'};
+ $cuaca2 = $parsed_json->{'current_observation'}->{'icon_url'};
+ 
+  $json_string = file_get_contents
+  ("http://api.wunderground.com/api/59c7fab0f84ee955/conditions/q/ID/Cileungsi.json");
+  $parsed_json = json_decode($json_string);
+  $lokasi3 = $parsed_json->{'current_observation'}->{'display_location'}->{'full'};
+ $suhu3 = $parsed_json->{'current_observation'}->{'feelslike_string'};
+ $cuaca3 = $parsed_json->{'current_observation'}->{'icon_url'};
+
+?>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="lib/bootstrap.min.css">
+	<script src="lib/jquery.min.js"></script>
+	<script src="lib/bootstrap.min.js"></script>
+	<style>
+	/* Remove the navbar's default rounded borders and increase the bottom margin */
+	.navbar {
+	margin-bottom: 50px;
+	border-radius: 0;
+	}
+	
+	/* Remove the jumbotron's default bottom margin */
+	.jumbotron {
+	margin-bottom: 0;
+	}
+	
+	/* Add a gray background color and some padding to the footer */
+	footer{
+		background-color: #f2f2f2;
+		padding: 25px;
+	}
+	</style>
+	</head>
+	
+	<body>
+<div class="jumbotron">
+  <div class="container text-center">
+  <h1>Selamat Datang</h1>
+  <p>Perkiraan Cuaca Daerah Jawa Barat</p>
+  </div>
+ </div>
+ 
+ <br>
+<br>
+**********************************************************************************************************
+<br>
+--<?php echo $lokasi ?>--<br>
+
+<br>Temperature <?php echo $suhu ?><br>
+<img src="<?php echo $cuaca ?>" ><br>
+-------------------------------------
+
+<br>
+--<?php echo $lokasi1 ?>--<br>
+<br>Temperature <?php echo $suhu1 ?><br>
+<img src="<?php echo $cuaca1 ?>"><br>
+-------------------------------------
+
+<br>
+--<?php echo $lokasi2 ?>--<br>
+<br>Temperature <?php echo $suhu2 ?><br>
+<img src="<?php echo $cuaca2 ?>" ><br>
+-------------------------------------
+
+
+<br>
+--<?php echo $lokasi3 ?>--<br>
+<br>Temperature <?php echo $suhu3 ?><br>
+<img src="<?php echo $cuaca3 ?>"><br>
+-------------------------------------<br>
+**********************************************************************************************************
+<br>
+<br>
+<br>
+ 
+ <nav class="navbar navbar-inverse">
+   <div class="container-fluid">
+    <div class="navbar-header">
+	<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=
+	"#mynavbar"
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+	</button>
+	</div>
+	<div class="collapse navbar-collapse" id=myNavbar>
+		<ul class="nav navbar-nav">
+		
+		<li>Inilah Data Perkiraan Cuaca di Daerah Semarang</a></li>
+	</ul>
+	<ul class="nav navbar-nav navbar-right">
+	
+	
+	
+	</ul>
+  </div>
+  </div>
+ </nav>
+		
+
+</body>	
+</html>
